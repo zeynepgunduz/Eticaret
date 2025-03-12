@@ -1,13 +1,24 @@
-﻿namespace Eticaret.Core.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+
+namespace Eticaret.Core.Entities
 {
     public class News :IEntity
 
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
+        [DisplayName("Adı")]
+
         public string Name { get; set; }
+        [DisplayName("Açıklama")]
+
         public string? Description { get; set; }
+        [DisplayName("Resim")]
+
         public string? Image { get; set; }
         public bool IsActive { get; set; }
-        public DateTime CretateDate { get; set; } //= new DateTime(2020, 10, 10);// DateTime.Now;
+        [DisplayName("Oluşturulma Tarihi"), ScaffoldColumn(false)]
+
+        public DateTime CretateDate { get; set; }= DateTime.Now;
     }
 }

@@ -1,7 +1,13 @@
+using Eticaret.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DatabaseContext>();
+
 
 var app = builder.Build();
 
@@ -19,6 +25,11 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute( //not adminin calýsacagý controllerý belirttik.
+  name: "admin",
+  pattern: "{area:exists}/{controller=Main}/{action=Index}/{id?}"
+);
 
 app.MapControllerRoute(
     name: "default",
