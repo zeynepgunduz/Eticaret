@@ -18,6 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Img\Slider\manzarasb.jfif" />
+    <Content Remove="wwwroot\Img\Slider\slider1.jpg" />
+    <Content Remove="wwwroot\Img\Slider\slider2.jpg" />
+    <Content Remove="wwwroot\Img\Slider\slider3.jpg" />
+    <Content Remove="wwwroot\Img\Slider\slider3.png" />
+    <Content Remove="wwwroot\Img\Slider\unitiled red %281%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
