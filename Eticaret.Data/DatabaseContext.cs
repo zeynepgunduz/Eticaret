@@ -13,7 +13,7 @@ namespace Eticaret.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<News> News { get; set; }
-        private DbSet<Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<Slider> Sliders { get; set; }
 
 

@@ -16,23 +16,24 @@ namespace Eticaret.Data.Congigurations
             builder.Property(x => x.Phone).HasColumnType("VARCHAR(50)").HasMaxLength(50);
             builder.Property(x => x.Password).IsRequired().HasColumnType("NVARCHAR(50)").HasMaxLength(50);
             builder.Property(x => x.Username).HasColumnType("NVARCHAR(50)").HasMaxLength(50);
+            builder.Property(x => x.CreateDate).IsRequired();
 
-            builder.HasData(
+            //builder.HasData(
 
-                new AppUser
-                {
-                    Id = 1,
-                    Name = "Admin",
-                    Surname = "Admin",
-                    IsActive = true,
-                    IsAdmin = true,
-                    Password = "123",
-                    Username = "admin",
-                    Email = "admin@testtt.com",
-                    UserGuid = new System.Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301")
+            //    new AppUser
+            //    {
+            //        Id = 1,
+            //        Name = "Admin",
+            //        Surname = "Admin",
+            //        IsActive = true,
+            //        IsAdmin = true,
+            //        Password = "123",
+            //        Username = "admin",
+            //        Email = "admin@testtt.com",
+            //        UserGuid = new System.Guid("3f2504e0-4f89-11d3-9a0c-0305e82c3301")
 
-                }
-                  );
+            //    }
+            //      );
 
         }
     }

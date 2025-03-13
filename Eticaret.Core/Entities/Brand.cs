@@ -25,7 +25,7 @@ namespace Eticaret.Core.Entities
         [DisplayName("Oluşturulma Tarihi"), ScaffoldColumn(false)]
 
         public DateTime CreateDate { get; set; } = DateTime.Now;// = new DateTime(2012, 12, 10);
-        public IList<Product> Products { get; set; }
+        public IList<Product>? Products { get; set; }
 
 
     }

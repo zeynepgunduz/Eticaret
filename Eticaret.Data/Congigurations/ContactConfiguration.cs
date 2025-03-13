@@ -16,16 +16,16 @@ namespace Eticaret.Data.Congigurations
             builder.Property(x => x.Phone).HasColumnType("VARCHAR(50)").HasMaxLength(20);
             builder.Property(x => x.Message).HasColumnType("VARCHAR(500)").HasMaxLength(500);
 
-            builder.HasData
-                (
-                new Contact
-                {
-                    Id = 1,
-                    Name = "Admin",
-                    Surname = "Admin",
-                    Email = "admin@deneme.com"
-                }
-                );
+            //builder.HasData
+            //    (
+            //    new Contact
+            //    {
+            //        Id = 1,
+            //        Name = "Admin",
+            //        Surname = "Admin",
+            //        Email = "admin@deneme.com"
+            //    }
+            //    );
         }
     }
 }

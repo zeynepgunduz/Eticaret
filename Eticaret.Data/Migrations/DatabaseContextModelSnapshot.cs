@@ -73,21 +73,6 @@ namespace Eticaret.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "admin@testtt.com",
-                            IsActive = true,
-                            IsAdmin = true,
-                            Name = "Admin",
-                            Password = "123",
-                            Surname = "Admin",
-                            UserGuid = new Guid("a3f67e15-2f3b-4c5d-9e2a-b3c61d4c8e44"),
-                            Username = "admin"
-                        });
                 });
 
             modelBuilder.Entity("Eticaret.Core.Entities.Brand", b =>
@@ -123,26 +108,6 @@ namespace Eticaret.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Brands");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreateDate = new DateTime(2020, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Brand1 Description",
-                            IsActive = true,
-                            Name = "Brand1",
-                            OrderNo = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreateDate = new DateTime(2020, 12, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Brand2 Description",
-                            IsActive = true,
-                            Name = "Brand2",
-                            OrderNo = 2
-                        });
                 });
 
             modelBuilder.Entity("Eticaret.Core.Entities.Category", b =>
@@ -184,32 +149,6 @@ namespace Eticaret.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Category1 Description",
-                            Image = "1.jpg",
-                            IsActive = true,
-                            IsTopMenu = true,
-                            Name = "Elektronik",
-                            OrderNo = 1,
-                            ParentId = 0
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Category2 Description",
-                            Image = "2.jpg",
-                            IsActive = true,
-                            IsTopMenu = true,
-                            Name = "Bilgisayar",
-                            OrderNo = 2,
-                            ParentId = 0
-                        });
                 });
 
             modelBuilder.Entity("Eticaret.Core.Entities.Contact", b =>
@@ -248,16 +187,6 @@ namespace Eticaret.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Contacts");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "admin@deneme.com",
-                            Name = "Admin",
-                            Surname = "Admin"
-                        });
                 });
 
             modelBuilder.Entity("Eticaret.Core.Entities.News", b =>
@@ -290,17 +219,6 @@ namespace Eticaret.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("News");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CretateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Haber1 Description",
-                            Image = "1.jpg",
-                            IsActive = true,
-                            Name = "Haber1"
-                        });
                 });
 
             modelBuilder.Entity("Eticaret.Core.Entities.Product", b =>
@@ -358,36 +276,6 @@ namespace Eticaret.Data.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Product1 Description",
-                            Image = "1.jpg",
-                            IsActive = true,
-                            IsHome = true,
-                            Name = "Product1",
-                            OrderNo = 0,
-                            Price = 100m,
-                            Stock = 100
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 2,
-                            CreateDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Product2 Description",
-                            Image = "2.jpg",
-                            IsActive = true,
-                            IsHome = true,
-                            Name = "Product2",
-                            OrderNo = 0,
-                            Price = 200m,
-                            Stock = 200
-                        });
                 });
 
             modelBuilder.Entity("Eticaret.Core.Entities.Slider", b =>

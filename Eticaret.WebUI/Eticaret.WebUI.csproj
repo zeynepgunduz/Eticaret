@@ -1,10 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\Views\Sliders\**" />
+    <Content Remove="Areas\Admin\Views\Sliders\**" />
+    <EmbeddedResource Remove="Areas\Admin\Views\Sliders\**" />
+    <None Remove="Areas\Admin\Views\Sliders\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\Controllers\SlidersController.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
@@ -25,6 +36,11 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="wwwroot\Img\Categories\" />
+    <Folder Include="wwwroot\Img\Brands\" />
+    <Folder Include="wwwroot\Img\News\" />
+    <Folder Include="wwwroot\Img\Slider\" />
+    <Folder Include="wwwroot\Img\Products\" />
   </ItemGroup>
 
 </Project>

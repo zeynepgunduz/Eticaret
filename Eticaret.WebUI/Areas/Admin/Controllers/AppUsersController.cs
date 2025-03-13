@@ -57,6 +57,7 @@ namespace Eticaret.WebUI.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(AppUser appUser)
         {
+         
             if (ModelState.IsValid)
             {
                 _context.Add(appUser);

@@ -16,18 +16,18 @@ namespace Eticaret.Data.Congigurations
             builder.Property(x => x.Image).HasColumnType("VARCHAR(250)").HasMaxLength(250);
             builder.Property(x => x.IsActive).IsRequired();
 
-            builder.HasData
-                (
+            //builder.HasData
+            //    (
 
-                new News
-                {
-                    Id = 1,
-                    Name = "Haber1",
-                    Description = "Haber1 Description",
-                    Image = "1.jpg",
-                    IsActive = true,
+            //    new News
+            //    {
+            //        Id = 1,
+            //        Name = "Haber1",
+            //        Description = "Haber1 Description",
+            //        Image = "1.jpg",
+            //        IsActive = true,
 
-                });
+            //    });
         }
     }
 }

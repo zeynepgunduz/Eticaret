@@ -20,33 +20,33 @@ namespace Eticaret.Data.Congigurations
             builder.Property(x => x.Stock).IsRequired();
             builder.Property(x => x.CategoryId).IsRequired();
             builder.HasOne(x => x.Category).WithMany(x => x.Products).HasForeignKey(x => x.CategoryId);
-            builder.HasData
-                (
-                new Product
-                {
-                    Id = 1,
-                    Name = "Product1",
-                    Description = "Product1 Description",
-                    Image = "1.jpg",
-                    Price = 100,
-                    IsActive = true,
-                    IsHome = true,
-                    Stock = 100,
-                    CategoryId = 1
-                },
-                new Product
-                {
-                    Id = 2,
-                    Name = "Product2",
-                    Description = "Product2 Description",
-                    Image = "2.jpg",
-                    Price = 200,
-                    IsActive = true,
-                    IsHome = true,
-                    Stock = 200,
-                    CategoryId = 2
-                }
-                );
+            //builder.HasData
+            //    (
+            //    new Product
+            //    {
+            //        Id = 1,
+            //        Name = "Product1",
+            //        Description = "Product1 Description",
+            //        Image = "1.jpg",
+            //        Price = 100,
+            //        IsActive = true,
+            //        IsHome = true,
+            //        Stock = 100,
+            //        CategoryId = 1
+            //    },
+            //    new Product
+            //    {
+            //        Id = 2,
+            //        Name = "Product2",
+            //        Description = "Product2 Description",
+            //        Image = "2.jpg",
+            //        Price = 200,
+            //        IsActive = true,
+            //        IsHome = true,
+            //        Stock = 200,
+            //        CategoryId = 2
+            //    }
+            //    );
         }
     }
 }

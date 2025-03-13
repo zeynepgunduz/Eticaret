@@ -29,7 +29,7 @@ namespace Eticaret.Core.Entities
 
         public DateTime CreateDate { get; set; } = DateTime.Now;// = new DateTime(2015, 12, 10);//DateTime.Now;
 
-        public  IList<Product> Products{ get; set; } 
+        public  IList<Product>? Products{ get; set; } 
 
 
     }
