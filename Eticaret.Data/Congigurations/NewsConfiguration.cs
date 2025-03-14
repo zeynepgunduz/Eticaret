@@ -12,7 +12,7 @@ namespace Eticaret.Data.Congigurations
         public void Configure(EntityTypeBuilder<News> builder)
         {
             builder.Property(x => x.Name).IsRequired().HasColumnType("VARCHAR(100)").HasMaxLength(100);
-            builder.Property(x => x.Description).HasColumnType("VARCHAR(500)").HasMaxLength(500);
+            builder.Property(x => x.Description).HasColumnType("VARCHAR(500)");
             builder.Property(x => x.Image).HasColumnType("VARCHAR(250)").HasMaxLength(250);
             builder.Property(x => x.IsActive).IsRequired();
 

@@ -5,6 +5,7 @@ using Eticaret.Data;
 using Microsoft.EntityFrameworkCore;
 using Eticaret.WebUI.Areas.Admin.Controllers;
 using Eticaret.Core.Entities;
+using Eticaret.WebUI.Utils;
 
 namespace Eticaret.WebUI.Controllers;
 
@@ -36,6 +37,35 @@ public class HomeController : Controller
     {
         return View();
     }
+    [HttpPost]
+    public async Task< IActionResult> ContactUsAsync(Contact contact)
+    {
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                await _context.Contacts.AddAsync(contact);
+                var sonuc = await _context.SaveChangesAsync();
+                if (sonuc > 0)
+                {
+                    TempData["Mesaj"] = @"<div class=""alert alert-success alert-dismissible fade show"" role=""alert"">
+  <strong>Mesajýnýz Gönderilmiþtir!</strong> 
+  <button type=""button"" class=""btn-close"" data-bs-dismiss=""alert"" aria-label=""Close""></button>
+</div>";
+                    //  await MailHelper.SendMailAsync(contact);
+                    return RedirectToAction("ContactUs");
+                }
+
+            }
+            catch (Exception)
+            {
+
+                ModelState.AddModelError("", "Bir hata oluþtu. Lütfen tekrar deneyiniz.");
+            }
+        }
+        return View(contact);
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
