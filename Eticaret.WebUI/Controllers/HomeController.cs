@@ -33,6 +33,12 @@ public class HomeController : Controller
     {
         return View();
     }
+    [Route("AccessDenied")]
+    public IActionResult AccessDenied()
+    {
+        return View();
+    }
+
     public IActionResult ContactUs()
     {
         return View();

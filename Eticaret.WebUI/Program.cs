@@ -1,5 +1,9 @@
 using Eticaret.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
+
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +12,26 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DatabaseContext>();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x=>
+{
+    x.LoginPath = "/Account/SignIn";
+    x.LogoutPath = "/Account/SignOut";
+    x.AccessDeniedPath = "/AccessDenied";
+    x.Cookie.MaxAge=TimeSpan.FromDays(7);
+    x.Cookie.Name = "Account";
+    x.Cookie.IsEssential = true;
+
+
+});
+
+
+builder.Services.AddAuthorization(x=>
+{ 
+    x.AddPolicy("AdminPolicy",policy=>policy.RequireClaim(ClaimTypes.Role,"Admin") );
+
+    x.AddPolicy("UserPolicy", policy => policy.RequireClaim(ClaimTypes.Role, "Admin", "User", "Customer"));
+    
+});
 
 var app = builder.Build();
 
@@ -24,7 +48,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthentication();//önce oturum acma
+app.UseAuthorization();//sonra yetkilendirme
 
 app.MapControllerRoute( //not adminin calýsacagý controllerý belirttik.
   name: "admin",
