@@ -58,9 +58,9 @@
                 Beni Hatırla
             </label>
         </div>
-        <input type="hidden" asp-for="ReturnUrl" value="@Context.Request.Query["ReturnUrl"]"/> 
-       
-        <!-- ReturnURL tasınmıyor, bakılacak. TODO 20250318 Zynp new-->
+
+        <input type="hidden" asp-for="ReturnUrl" value="@Context.Request.Query["ReturnUrl"]"/>   
+        <!-- ReturnURL tasınıyor. TODO 20250318 Zynp new-->
         <button class="btn btn-primary w-100 py-2" type="submit">Giriş</button>
  
     </form>

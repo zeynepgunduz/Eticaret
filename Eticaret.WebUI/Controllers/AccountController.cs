@@ -31,11 +31,6 @@ namespace Eticaret.WebUI.Controllers
 
 
         /*
-         
-
-    
-   
-
          */
         [HttpPost]
         public async Task< IActionResult> SignInAsync(LoginViewModel loginViewModel)  
@@ -74,7 +69,7 @@ namespace Eticaret.WebUI.Controllers
                 {
 
                     //loglama
-                    ModelState.AddModelError("", "Hata Oluştu!" + ex.Message );
+                    ModelState.AddModelError("", "Hata Oluştu!");//  + ex.Message );
                 }
             }
              return View(loginViewModel);
