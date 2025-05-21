@@ -23,7 +23,7 @@ Bu proje, C# ve ASP.NET MVC teknolojileri kullanılarak geliştirilmiş, temel e
 **Frontend:** Razor View, HTML, CSS, Bootstrap
 
 
-## Ekran Görüntüleri
+## Bazı Ekran Görüntüleri
 
 ![Ana Sayfa](screenshots/anasayfa.png)
 ![Admin Panel](screenshots/adminpanel.png)
