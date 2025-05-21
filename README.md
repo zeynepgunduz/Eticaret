@@ -18,7 +18,7 @@ Bu proje, C# ve ASP.NET MVC teknolojileri kullanılarak geliştirilmiş, temel e
 
 **ORM:** Entity Framework  
 
-**Veritabanı:** SQL Server
+**Veritabanı:** SQL Server, Dependency Injection kullanıldı.
 
 **Frontend:** Razor View, HTML, CSS, Bootstrap
 
@@ -33,6 +33,5 @@ Bu proje, C# ve ASP.NET MVC teknolojileri kullanılarak geliştirilmiş, temel e
 
 
 ## Yapılacaklar
-- Database bağlantısı ,DatabaseContext classından çıkarılacak, DependencyInjection kullanılacak.
 - Admin yönetim ekranlarında sıralama yapılırken farklı ürünlere aynı sıra verilmemesi sağlanacak.
-- Database işlemleri direkt Data katmanındaki DbContext ile yapılıyor. GenericRepository Pattern'e geçilecek. 
+- Database işlemleri için GenericRepository Pattern'e geçilecek. 
