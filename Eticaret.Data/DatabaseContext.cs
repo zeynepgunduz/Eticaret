@@ -8,6 +8,12 @@ namespace Eticaret.Data
 {
     public class DatabaseContext : DbContext
     {
+     
+        public DatabaseContext(DbContextOptions<DatabaseContext> options)
+            : base(options)
+        {
+        }
+         
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -16,14 +22,14 @@ namespace Eticaret.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Slider> Sliders { get; set; }
 
+        // sil111
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Eticaret;Trusted_Connection=True;TrustServerCertificate=true;");
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Eticaret;Trusted_Connection=True;TrustServerCertificate=true;");
-
-            optionsBuilder.ConfigureWarnings(warnings => warnings.Throw (RelationalEventId.PendingModelChangesWarning));
-            // NOT migration yaparken update-database hatasının cozumu icin
-        }
+        //    optionsBuilder.ConfigureWarnings(warnings => warnings.Throw (RelationalEventId.PendingModelChangesWarning));
+        //    // NOT migration yaparken update-database hatasının cozumu icin
+        //}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 

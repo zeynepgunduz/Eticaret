@@ -1,16 +1,29 @@
 using Eticaret.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
-
+using Eticaret.Service.Abstract ;
 
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using Eticaret.Service.Concrete;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<DatabaseContext>();
+//builder.Services.AddDbContext<DatabaseContext>();
+/*builder.Services.AddScoped(typeof(IService<>),typeof(Service<>));*/
+
+//dependency injection DI gecis yaptým 21.05.2025
+builder.Services.AddDbContext<DatabaseContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.ConfigureWarnings(warnings =>
+        warnings.Throw(RelationalEventId.PendingModelChangesWarning));
+});
+
+
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x=>
 {

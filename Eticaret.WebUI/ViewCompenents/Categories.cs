@@ -6,7 +6,13 @@ namespace Eticaret.WebUI.ViewCompenents
 {
     public class Categories : ViewComponent
     {
-        public DatabaseContext _context=new DatabaseContext();
+ 
+        private readonly DatabaseContext _context;
+
+        public Categories(DatabaseContext context)
+        {
+            _context = context;
+        }
         public async Task< IViewComponentResult >InvokeAsync()
         {
             return View(await _context.Categories.ToListAsync());
