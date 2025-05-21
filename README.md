@@ -1,5 +1,6 @@
-Bu proje, C# ve ASP.NET MVC teknolojileri kullanılarak geliştirilmiş, temel e-ticaret işlevselliği sunan bir web uygulamasıdır. 
-UDEMY platformundaki, Mesut Ilıca'nın Asp .NET Core MVC İle Sıfırdan E Ticaret Yazılımı Geliştirme eğitimi ilk 84 dersi paraleline geliştirilmiştir. 
+Bu proje, C# ve ASP.NET MVC teknolojileri kullanılarak geliştirilmiş, temel e-ticaret sitesinin kurumsal önyüzünü ve admin işlemlerini sunan bir web uygulamasıdır. 
+
+*UDEMY platformundaki, Mesut Ilıca'nın Asp.NET Core MVC İle Sıfırdan E Ticaret Yazılımı Geliştirme eğitimi ilk 84 dersi paraleline geliştirilmiştir.*
 
  *Kategori Listeleme*,
 *Ürün listeleme*,
