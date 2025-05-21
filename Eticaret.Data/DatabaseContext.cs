@@ -12,6 +12,7 @@ namespace Eticaret.Data
         public DatabaseContext(DbContextOptions<DatabaseContext> options)
             : base(options)
         {
+
         }
          
         public DbSet<AppUser> AppUsers { get; set; }

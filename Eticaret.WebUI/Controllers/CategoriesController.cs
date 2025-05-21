@@ -13,6 +13,7 @@ namespace Eticaret.WebUI.Controllers
             _context = context;
         }
 
+
         public async Task<IActionResult> Index(int? id)
         {
          if (id == null)
